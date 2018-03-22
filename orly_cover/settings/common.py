@@ -16,6 +16,8 @@ from os.path import abspath, dirname, join
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 
+ROOT = lambda *args: join(BASE_DIR, *args)
+#루트라는 함수를 만들어서 경로를 조합함
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
