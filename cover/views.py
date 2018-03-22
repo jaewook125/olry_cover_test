@@ -20,19 +20,24 @@ def image_generater(request):
 	title = request.GET['title']
 	top_text = request.GET['top_text']
 	author = request.GET['author']
+	animal_code = request.GET['animal_code']
+	color_index = request.GET['color_code']
+	guide_text = request.GET['guide_text']
+	guide_text_placement = request.GET['guide_text_placement']
 
 	im = Image.new("RGB", (256,256), 'white')
 
 	# im : 위 데이터를 받아서, 이미지는 여기에서 그림
 
 	ttf_path = settings.ROOT('assets', 'fonts', 'NanumGothicCoding.ttf')
-	fnt = ImageFont.truetype(ttf_path, 40)
-	# 글자
 	d = ImageDraw.Draw(im)
+
 	fnt = ImageFont.truetype(ttf_path, 40)
 	d.text((10,10), title, font=fnt, fill=(0,255,0,128))
+
 	fnt = ImageFont.truetype(ttf_path, 20)
 	d.text((10,60), top_text , font=fnt, fill=(0,255,0,255))	
+
 	fnt = ImageFont.truetype(ttf_path, 10)
 	d.text((10,110), author , font=fnt, fill=(0,255,0,255))
 
